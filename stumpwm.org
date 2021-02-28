@@ -5,6 +5,13 @@
 
 * Startup options
 
+** Load StumpWM
+
+#+begin_src lisp :tangle start.lisp
+(require :stumpwm)
+(stumpwm:stumpwm)
+#+end_src
+
 ** Environment and init options
 
 #+begin_src lisp :tangle init.lisp
