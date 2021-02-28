@@ -35,7 +35,7 @@ run-or-raise with group search t."
 
 
 (define-key *top-map* (kbd "s-e") "exec emacsclient -c")
-(define-key *top-map* (kbd "s-r") "exec pkill stumpwm")
+(define-key *top-map* (kbd "s-r") "quit-confirm")
 (define-key *top-map* (kbd "s-RET") "exec urxvtc")
 (define-key *top-map* (kbd "s-g") "exec urxvtc -e gotop")
 (define-key *top-map* (kbd "s-w") "run-or-raise-firefox")
@@ -62,6 +62,10 @@ run-or-raise with group search t."
 
 (define-key *top-map* (kbd "XF86MonBrightnessDown") "exec brightnessctl set 5%-")
 (define-key *top-map* (kbd "XF86MonBrightnessUp") "exec brightnessctl set +5%")
+
+(define-key *top-map* (kbd "XF86AudioLowerVolume") "exec pamixer -d 5")
+(define-key *top-map* (kbd "XF86AudioRaiseVolume") "exec pamixer -i 5")
+(define-key *top-map* (kbd "XF86AudioMute") "exec pamixer --toggle-mute")
 
 (setf (group-name (car (screen-groups (current-screen)))) "I")
 (run-commands "gnewbg II" "gnewbg III" "gnewbg  III" "gnewbg IV" "gnewbg V")
@@ -105,7 +109,8 @@ run-or-raise with group search t."
 
 (define-key *root-map* (kbd "SPC") "mode-line")
 
-(defun monocle ()
+(defcommand monocle () ()
+  "Toggles both the modeline and gaps"
   (swm-gaps:toggle-gaps)
   (mode-line))
 
