@@ -43,8 +43,8 @@ run-or-raise with group search t."
 (defcommand run-or-raise-firefox () ()
   (run-or-raise-prefer-group "firefox" "Firefox"))
 
-(define-key *top-map* (kbd "s-b") "exec rofi -show window")
-(define-key *top-map* (kbd "s-x") "exec rofi -show run")
+(define-key *top-map* (kbd "s-b") "exec switch")
+(define-key *top-map* (kbd "s-x") "exec dmenu_run")
 (define-key *top-map* (kbd "s-o") "other")
 (define-key *top-map* (kbd "s-q") "delete")
 (define-key *top-map* (kbd "s-j") "eval")
