@@ -182,7 +182,6 @@ Set basic options. Compositor, keyboard layout, mouse and wallpaper.
   (define-key *root-map* (kbd "SPC") "mode-line")
 #+end_src
 
-
 * Monocle mode
 
 #+begin_src lisp :tangle init.lisp
